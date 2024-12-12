@@ -154,7 +154,7 @@ input[type="range"]::-webkit-slider-thumb {
 .buttons button i:hover , #muted i:hover {
     transform: translateY(-2px);
 }
-@media (max-width:767px) {
+@media (max-width:991px) {
     .container {
         width: 100%;
     }
