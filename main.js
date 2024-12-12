@@ -160,7 +160,11 @@ window.onload = function () {
             e.target.classList.add("order")
             loadAudio(currentIndex)
             audio.play()
-            audioContainer.scrollTo(0,0)
+            audioContainer.scrollTo({
+                top:0,
+                left:0,
+                behavior:"smooth"
+            })
         }
         
     })
