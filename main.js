@@ -83,7 +83,7 @@ function createPlayList () {
         logoImage.src = '/images/images.jpeg'
         audioItem.appendChild(logoImage)
         var songName = document.createElement("p")
-        songName.textContent = `${i+1}- ${audios[i].title}`
+        songName.textContent = `${audios[i].title}`
         audioItem.appendChild(songName)
         audioContainer.appendChild(audioItem)
     }
@@ -155,12 +155,15 @@ window.onload = function () {
     
     document.addEventListener('click' , (e) => {
         if (e.target.className === 'audio') {
+            audioContainer.children[currentIndex].classList.remove("order")
             currentIndex = e.target.getAttribute('data-index')
+            e.target.classList.add("order")
             loadAudio(currentIndex)
             audio.play()
+            audioContainer.scrollTo(0,0)
         }
         
-    },true)
+    })
 }
 
 
