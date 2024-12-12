@@ -35,7 +35,6 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-
 .audios {
     flex-basis: 40%;
     border: 1px solid #777;
@@ -100,6 +99,7 @@ body {
     border-radius: 10px;
     text-align: center;
 }
+
 .player .image img {
     max-width: 100%;
     border-radius: 10px 10px 0 0;
@@ -153,6 +153,31 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .buttons button i:hover , #muted i:hover {
     transform: translateY(-2px);
+}
+@media (max-width:767px) {
+    .container {
+        width: 100%;
+    }
+    .audios {
+      flex-basis: 45%;
+      margin: 0 auto;
+    }
+    .player {
+        flex-basis: 45%;
+        margin: 0 auto;
+    }
+    .buttons {
+        width: 80%;
+    }
+    .player .title {
+        font-size: 1.5rem;
+    }
+    .audio p {
+        font-size: 12px;
+    }
+    .buttons button i , #muted i {
+        font-size: 16px;
+    }
 }
 .player .volume {
     width: 80%;
