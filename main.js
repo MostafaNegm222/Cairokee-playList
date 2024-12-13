@@ -109,10 +109,10 @@ muted.addEventListener('click' , function () {
     audio.muted = !audio.muted
     
     if (audio.muted) {
-        muted.innerHTML = `<i class="fa-solid fa-volume-high"></i>`
+        muted.innerHTML = `<i class=" fa-solid fa-volume-xmark"></i>` 
         volume.value = 0
     } else {
-        muted.innerHTML = `<i class=" fa-solid fa-volume-xmark"></i>` 
+        muted.innerHTML = `<i class="fa-solid fa-volume-high"></i>`
         volume.value = 70
     }
 })
