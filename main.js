@@ -70,8 +70,8 @@ function loadAudio (index) {
         audioContainer.children[index].firstElementChild.classList.remove("active")
         audioContainer.children[index].lastElementChild.classList.remove("active")
     })
-    audioContainer.children[index].firstElementChild .classList.add("active")
-    audioContainer.children[index].lastElementChild .classList.add("active")
+    audioContainer.children[index].firstElementChild.classList.add("active")
+    audioContainer.children[index].lastElementChild.classList.add("active")
 }
 
 function createPlayList () {
@@ -87,23 +87,22 @@ function createPlayList () {
         audioItem.appendChild(songName)
         audioContainer.appendChild(audioItem)
     }
-
 }
 
 play.addEventListener('click' , function () {
     audio.play()
+    audioContainer.children[currentIndex].firstElementChild.style.animationPlayState = 'running'
 })
 
 pause.addEventListener('click' , function () {
     audio.pause()
+    audioContainer.children[currentIndex].firstElementChild.style.animationPlayState = 'paused'
 })
 
 stop.addEventListener('click' , function () {
     audio.currentTime = 0
     audio.play()
 })
-
-
 
 muted.addEventListener('click' , function () {
     audio.muted = !audio.muted
@@ -150,9 +149,7 @@ audio.addEventListener("timeupdate" , function () {
 
 window.onload = function () {
     createPlayList ()
-    loadAudio (currentIndex , true)
-
-    
+    loadAudio (currentIndex)
     document.addEventListener('click' , (e) => {
         if (e.target.className === 'audio') {
             audioContainer.children[currentIndex].classList.remove("order")
@@ -169,7 +166,3 @@ window.onload = function () {
         
     })
 }
-
-
-
-console.dir(audio)
